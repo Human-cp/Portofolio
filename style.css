@@ -1,0 +1,235 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #111;
+    color: #aaa;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 860px;
+    max-width: 100%;
+    margin: auto;
+    background-color: #191919;
+    border-left: 1px solid #292929;
+    border-right: 1px solid #292929;
+}
+
+
+/* HEADER */
+
+header {
+    min-height: 230px;
+    padding: 20px 30px;
+    position: relative;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #191919,
+            #191919 3px,
+            #202020 3px,
+            #202020 5px
+        );
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin-top: 70px;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile_info h1 {
+    margin: 0 0 15px;
+    color: white;
+    font-size: 28px;
+}
+
+.info {
+    display: flex;
+    gap: 25px;
+}
+
+.info a {
+    color: #6b91ff;
+}
+
+
+/* SECTION */
+
+section {
+    display: flex;
+    gap: 50px;
+    padding: 70px 30px;
+    border-top: 1px solid #292929;
+}
+
+section h2 {
+    width: 135px;
+    margin: 0;
+    color: white;
+    font-size: 17px;
+}
+
+.about_text {
+    flex: 1;
+}
+
+.about_text p {
+    margin-top: 0;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+
+/* SKILLS */
+
+.skill_list {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.skill img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+
+
+.skill span {
+    font-size: 14px;
+}
+
+/* PROJECT */
+
+.projects {
+    display: block;
+}
+
+.projects h2 {
+    margin-bottom: 30px;
+}
+
+.project_list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project_card {
+    width: 100%;
+    border: 1px solid #333;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #191919;
+}
+
+.project_card img {
+    width: 90%;
+    height: 250px;
+    object-fit: cover;
+    margin: 15px auto 0;
+    display: block;
+    border-radius: 4px;
+}
+
+.project_info {
+    padding: 20px;
+}
+
+.project_info h3 {
+    margin: 0 0 10px;
+    color: white;
+}
+
+.project_info p {
+    margin: 0 0 15px;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.project_tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.project_tech span {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.project_info a {
+    color: #6b91ff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 25px 30px;
+    border-top: 1px solid #292929;
+    text-align: center;
+    font-size: 13px;
+}
+
+.contact {
+    display: flex;
+    gap: 50px;
+    padding: 70px 30px;
+    border-top: 1px solid #292929;
+}
+
+.contact h2 {
+    width: 135px;
+    margin: 0;
+    color: white;
+    font-size: 17px;
+}
+
+.contact_info {
+    flex: 1;
+}
+
+.contact_info p {
+    margin: 0 0 20px;
+    line-height: 1.6;
+}
+
+.contact_links {
+    display: flex;
+    gap: 25px;
+}
+
+.contact_links a {
+    color: #6b91ff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.contact_links a:hover {
+    color: white;
+}
