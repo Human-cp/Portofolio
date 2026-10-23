@@ -8,24 +8,38 @@ const prevImage = document.getElementById("prev-image");
 const nextImage = document.getElementById("next-image");
 const imageCounter = document.getElementById("image-counter");
 
+let currentImages = [];
 let currentImageIndex = 0;
 
 function showImage(index) {
-    currentImageIndex =
-        (index + projectImages.length) % projectImages.length;
+    if (currentImages.length === 0) return;
 
-    viewerImage.src = projectImages[currentImageIndex].src;
-    viewerImage.alt = projectImages[currentImageIndex].alt;
+    currentImageIndex =
+        (index + currentImages.length) % currentImages.length;
+
+    viewerImage.src = currentImages[currentImageIndex].src;
+    viewerImage.alt = currentImages[currentImageIndex].alt;
 
     imageCounter.textContent =
-        `${currentImageIndex + 1} / ${projectImages.length}`;
+        `${currentImageIndex + 1} / ${currentImages.length}`;
 }
 
-projectImages.forEach((image, index) => {
+projectImages.forEach((image) => {
     image.style.cursor = "zoom-in";
 
     image.addEventListener("click", () => {
+        // Ambil gambar hanya dari galeri proyek yang diklik
+        const gallery = image.closest(".project-gallery");
+
+        currentImages = gallery
+            ? Array.from(gallery.querySelectorAll(".project-image"))
+            : [image];
+
+        // Mulai dari gambar yang diklik
+        const index = currentImages.indexOf(image);
+
         showImage(index);
+
         viewer.classList.add("active");
         document.body.style.overflow = "hidden";
     });
@@ -55,10 +69,14 @@ viewer.addEventListener("click", (event) => {
 document.addEventListener("keydown", (event) => {
     if (!viewer.classList.contains("active")) return;
 
-    if (event.key === "Escape") closeImageViewer();
+    if (event.key === "Escape") {
+        closeImageViewer();
+    }
+
     if (event.key === "ArrowLeft") {
         showImage(currentImageIndex - 1);
     }
+
     if (event.key === "ArrowRight") {
         showImage(currentImageIndex + 1);
     }
